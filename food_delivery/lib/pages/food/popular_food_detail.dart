@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/app_icon.dart';
+import 'package:food_delivery/widgets/expandible_text_widget.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/big_text.dart';
@@ -18,6 +19,7 @@ class PopularFoodDetails extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          //Background Image
           Positioned(
               left: 0,
               right: 0,
@@ -29,6 +31,7 @@ class PopularFoodDetails extends StatelessWidget {
                         fit: BoxFit.cover,
                         image: AssetImage("assets/image/food02.jpg"))),
               )),
+          //icon widget
           Positioned(
               top: Dimensions.height45,
               left: Dimensions.width20,
@@ -40,6 +43,7 @@ class PopularFoodDetails extends StatelessWidget {
                   AppIcon(icon: Icons.shopping_cart_outlined),
                 ],
               )),
+          //introduction of food
           Positioned(
               right: 0,
               left: 0,
@@ -60,22 +64,22 @@ class PopularFoodDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AppColumn(
-                      text: "Yam Pourage",
-                    ),
-                    SizedBox(
-                      height: Dimensions.height35,
-                    ),
-                    BigText(
-                      text: "Introduce",
-                      color: AppColours.mainBlackColor,
-                    ),
-                    SizedBox(
-                      height: Dimensions.height30,
+                    AppColumn(text: "Yam Pourage",),
+                    SizedBox( height: Dimensions.height35,),
+                    BigText(text: "Introduce", color: AppColours.mainBlackColor,),
+                    SizedBox( height: Dimensions.height30,),
+                    Expanded(
+                        child: SingleChildScrollView(
+                            child: ExpandableTextWidget(
+                                text: "This will add a line like this to your  like this to your  like this to your  like this to your  like this to your  like this to your like this to your  like this to your  like this to your  like this to your  like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml This will add a line like this to your package's pubspec.yaml "
+                            )
+                        )
                     ),
                   ],
                 ),
-              ))
+              )),
+          //expandable text widget
+
         ],
       ),
       bottomNavigationBar: Container(
