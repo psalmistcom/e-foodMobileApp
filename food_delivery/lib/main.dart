@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: MainFoodPage(),
-      // home: PopularFoodDetails()
+      // home: MainFoodPage(),
+      home: PopularFoodDetails()
     );
   }
 }
